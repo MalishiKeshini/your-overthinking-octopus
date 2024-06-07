@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overthinking Octopus</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Overthinking Octopus</h1>
+        <p class="subtitle">Free yourself from overthinking and embrace the present!</p>
+    </header>
+
+    <main>
+        <section class="container">
+            <h2>Thought Journal</h2>
+            <div class="input-group">
+                <label for="thought-input">What's on your mind?</label>
+                <textarea id="thought-input" rows="3"></textarea>
+            </div>
+            <button onclick="deleteThoughts()">Delete Your Thoughts</button>
+            <ul id="thought-list"></ul>
+        </section>
+
+        <section class="container">
+            <h2>Mindfulness Exercises</h2>
+            <p>Choose from the following exercises:</p>
+            <ol>
+                <br>
+                <li><strong>Breathing Exercise:</strong> Take slow, deep breaths for 5 minutes.</li>
+                <br>
+                <li><strong>Body Scan:</strong> Close your eyes and focus on each part of your body, starting from your toes and moving up to your head.</li>
+                <br>
+                <li><strong>Gratitude Practice:</strong> Write down three things you're grateful for.</li>
+                <br>
+                <li><strong>Sensory Awareness:</strong> Engage your senses by noticing five things you can see, four things you can touch, three things you can hear, two things you can smell, and one thing you can taste.</li>
+                <br>
+            </ol>
+            <button onclick="startExercise()">Start Exercise</button>
+            <div id="countdown" class="countdown"></div>
+        </section>
+
+        <section class="container">
+            <h2>Tips to Manage Overthinking</h2>
+            <ul>
+                <br>
+                <li>Recognize the pattern of overthinking.</li>
+                <br>
+                <li>Challenge your thoughts with realistic perspectives.</li>
+                <br>
+                <li>Set time limits for worrying.</li>
+                <br>
+                <li>Take action, even if it's a small step.</li>
+                <br>
+                <li>Practice mindfulness and meditation.</li>
+                <br>
+                <li>Seek support from a therapist or counselor.</li>
+                <br>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Overthinking Octopus. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
