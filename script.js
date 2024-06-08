@@ -1,19 +1,38 @@
 // script.js
 
 function deleteThoughts() {
+    const thoughtInput = document.getElementById('thought-input');
     const thoughtList = document.getElementById('thought-list');
-    thoughtList.innerHTML = ''; // Clear all thoughts
+    const thoughts = thoughtInput.value.trim();
 
-    // Display a stylish prompt message
-    const promptMessage = document.createElement('div');
-    promptMessage.classList.add('prompt-message');
-    promptMessage.textContent = "🐙 Your head is free now! Feel the weight lifted off your shoulders.";
-    document.body.appendChild(promptMessage);
+    // Check if the textarea is empty
+    if (thoughts === '') {
+        // Display a friendly prompt message
+        const promptMessage = document.createElement('div');
+        promptMessage.classList.add('prompt-message');
+        promptMessage.textContent = "😊 It looks like you don't have any thoughts to delete!";
+        document.body.appendChild(promptMessage);
 
-    // Remove the message after 3 seconds
-    setTimeout(() => {
-        document.body.removeChild(promptMessage);
-    }, 3000);
+        // Remove the message after 3 seconds
+        setTimeout(() => {
+            document.body.removeChild(promptMessage);
+        }, 3000);
+    } else {
+        // Clear the textarea and thought list
+        thoughtInput.value = '';
+        thoughtList.innerHTML = '';
+
+        // Display a stylish prompt message
+        const promptMessage = document.createElement('div');
+        promptMessage.classList.add('prompt-message');
+        promptMessage.textContent = "🐙 Your head is free now! Feel the weight lifted off your shoulders.";
+        document.body.appendChild(promptMessage);
+
+        // Remove the message after 3 seconds
+        setTimeout(() => {
+            document.body.removeChild(promptMessage);
+        }, 3000);
+    }
 }
 
 function startExercise() {
@@ -24,7 +43,7 @@ function startExercise() {
     const inhaleCircle = document.createElement('div');
     inhaleCircle.classList.add('circle', 'inhale');
     inhaleCircle.textContent = 'Inhale';
-    
+
     const exhaleCircle = document.createElement('div');
     exhaleCircle.classList.add('circle', 'exhale');
     exhaleCircle.textContent = 'Exhale';
@@ -49,5 +68,9 @@ function startExercise() {
 
 function stopExercise() {
     const promptBox = document.querySelector('.prompt-box');
-    promptBox.parentNode.removeChild(promptBox);
+    if (promptBox) {
+        promptBox.parentNode.removeChild(promptBox);
+    }
+    const countdownElement = document.getElementById('countdown');
+    countdownElement.innerHTML = '';
 }
